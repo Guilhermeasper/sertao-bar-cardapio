@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  padding: 0 1rem;
+  background-color: var(--palette-tertiary-90);
+  border-radius: 4rem;
+  align-items: center;
+  height: 2.5rem;
+  cursor: pointer;
+  border: none;
+
+  &.active {
+    background-color: var(--palette-tertiary-80);
+  }
+}
+
+p {
+  white-space: pre;
+  font-size: var(--label-large-size);
+}
