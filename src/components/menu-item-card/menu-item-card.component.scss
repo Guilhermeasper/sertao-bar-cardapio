@@ -1,0 +1,42 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0.75rem;
+  font-family: var(--headline-medium-family);
+  background-color: var(--palette-primary-95);
+  border-radius: 0.5rem;
+}
+
+.description-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 0.5rem;
+
+  .title {
+    font-size: var(--title-medium-size);
+    font-weight: 600;
+  }
+
+  .description {
+    font-size: var(--body-medium-size);
+    font-weight: 300;
+  }
+
+  .price {
+    text-align: right;
+    font-size: var(--title-medium-size);
+    font-weight: 600;
+  }
+}
+
+img {
+  max-height: 6rem;
+  min-width: 6rem;
+  object-fit: contain;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
