@@ -1,0 +1,15 @@
+<div
+  class="name"
+  [class.sticky]="sticky"
+  [style.height]="height"
+  [style.top]="topPx"
+>
+  <span [style.fontSize]="fontSizePx" class="start">Ser</span
+  ><span [style.fontSize]="fontSizePx" class="end">tão</span>
+  <span [style.fontSize]="fontSizeBarPx" class="bar">Bar</span>
+</div>
+<div class="menu-select" [style.top]="height" [class.sticky]="sticky">
+  <app-chip *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8]"
+    >Option {{ item }}</app-chip
+  >
+</div>
