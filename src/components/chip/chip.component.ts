@@ -3,6 +3,10 @@ import {
   OnInit,
   ChangeDetectionStrategy,
   HostListener,
+  Output,
+  EventEmitter,
+  Input,
+  HostBinding,
 } from '@angular/core';
 
 @Component({
@@ -15,13 +19,18 @@ import {
   },
 })
 export class ChipComponent implements OnInit {
-  active: boolean = false;
+  @Output() stateChange: EventEmitter<string> = new EventEmitter();
+
+  @Input() name: string = '';
+
+  @Input() active: boolean = false;
   constructor() {}
 
   ngOnInit(): void {}
 
   @HostListener('click')
-  onClick(event: Event): void {
+  onClick(): void {
     this.active = !this.active;
+    this.stateChange.emit(this.name);
   }
 }

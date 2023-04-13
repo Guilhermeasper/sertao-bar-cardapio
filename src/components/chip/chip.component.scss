@@ -1,19 +1,22 @@
 :host {
   display: flex;
   padding: 0 1rem;
-  background-color: var(--palette-tertiary-90);
+  background-color: var(--sertao-secondary);
+  color: var(--sertao-primary-shade);
   border-radius: 4rem;
   align-items: center;
   height: 2.5rem;
   cursor: pointer;
   border: none;
+  white-space: pre;
+  font-family: var(--title-large-family);
+  font-size: var(--title-large-size);
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  -webkit-tap-highlight-color: transparent;
 
   &.active {
-    background-color: var(--palette-tertiary-80);
+    background-color: var(--sertao-secondary-shade);
+    color: var(--sertao-light);
   }
-}
-
-p {
-  white-space: pre;
-  font-size: var(--label-large-size);
 }
