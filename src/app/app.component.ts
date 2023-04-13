@@ -3,9 +3,12 @@ import {
   ElementRef,
   Input,
   OnInit,
+  QueryList,
+  ViewChild,
   ViewChildren,
 } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, fromEvent, takeUntil } from 'rxjs';
+import { HeaderComponent } from 'src/components/header/header.component';
 import { MenuSectionComponent } from 'src/components/menu-section/menu-section.component';
 import { MenuItem } from 'src/models/menu-item';
 import { SpreadsheetResponse } from 'src/models/spreadsheet-response';
@@ -24,9 +27,32 @@ export class AppComponent implements OnInit {
   items: Array<string[]> = [];
   itemsSubject = new Subject<string[]>();
 
-  @ViewChildren('section') sectionsRef: MenuSectionComponent[] = [];
+  @ViewChildren('section') sectionsRef: QueryList<MenuSectionComponent> =
+    new QueryList<MenuSectionComponent>();
+
+  @ViewChild(HeaderComponent) headerRef: HeaderComponent | undefined;
 
   constructor(private spreadSheetService: SpreadsheetService) {}
+
+  onScroll(): void {
+    let offsetSum = 0;
+    for (let index = 0; index < this.sectionsRef.length; index++) {
+      const element = this.sectionsRef.get(index);
+      const elementSize = 48 + (element?.items?.length ?? 0) * 112;
+      offsetSum += elementSize;
+
+      if (
+        window.scrollY < offsetSum &&
+        window.scrollY > offsetSum - elementSize - 40
+      ) {
+        this.selectedSection = element?.name ?? this.sections[0];
+        this.headerRef?.menu?.nativeElement.children[index].scrollIntoView({
+          behavior: 'smooth',
+          inline: 'center',
+        });
+      }
+    }
+  }
 
   ngOnInit(): void {
     this.sectionsSubject.subscribe((sections) => {
@@ -40,6 +66,9 @@ export class AppComponent implements OnInit {
 
     this.spreadSheetService.getMenuItems().subscribe((items) => {
       this.items = items.values;
+      fromEvent(window, 'scroll')
+        .pipe()
+        .subscribe(() => this.onScroll());
     });
   }
 

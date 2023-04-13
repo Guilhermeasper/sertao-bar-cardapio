@@ -7,6 +7,8 @@ import {
   Input,
   Output,
   EventEmitter,
+  ViewChild,
+  ElementRef,
 } from '@angular/core';
 
 @Component({
@@ -14,15 +16,15 @@ import {
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {
-    '[class.sticky]': 'sticky',
-  },
+  host: {},
 })
 export class HeaderComponent implements OnInit {
   @Output() sectionChanged: EventEmitter<string> = new EventEmitter();
 
   @Input() selectedSection = '';
   @Input() sections: string[] = [];
+
+  @ViewChild('menu') menu: ElementRef<HTMLElement> | undefined;
 
   constructor() {}
 
