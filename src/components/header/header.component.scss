@@ -37,7 +37,13 @@
   padding-bottom: 1rem;
   z-index: 20;
 
-  margin: 0 2rem;
+  :first-child {
+    margin-left: 2rem;
+  }
+
+  :last-child {
+    margin-right: 2rem;
+  }
 
   &::-webkit-scrollbar,
   &::-webkit-scrollbar-button,
