@@ -30,7 +30,7 @@ export class ChipComponent implements OnInit {
 
   @HostListener('click')
   onClick(): void {
-    this.active = !this.active;
+    this.active = true;
     this.stateChange.emit(this.name);
   }
 }
