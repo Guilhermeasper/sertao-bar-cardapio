@@ -7,7 +7,7 @@ import {
   ViewChild,
   ViewChildren,
 } from '@angular/core';
-import { Subject, fromEvent, takeUntil } from 'rxjs';
+import { Subject, debounce, fromEvent, interval, takeUntil } from 'rxjs';
 import { HeaderComponent } from 'src/components/header/header.component';
 import { MenuSectionComponent } from 'src/components/menu-section/menu-section.component';
 import { MenuItem } from 'src/models/menu-item';
@@ -46,10 +46,6 @@ export class AppComponent implements OnInit {
         window.scrollY > offsetSum - elementSize - 40
       ) {
         this.selectedSection = element?.name ?? this.sections[0];
-        this.headerRef?.menu?.nativeElement.children[index].scrollIntoView({
-          behavior: 'smooth',
-          inline: 'center',
-        });
       }
     }
   }
@@ -67,7 +63,7 @@ export class AppComponent implements OnInit {
     this.spreadSheetService.getMenuItems().subscribe((items) => {
       this.items = items.values;
       fromEvent(window, 'scroll')
-        .pipe()
+        .pipe(debounce(() => interval(100)))
         .subscribe(() => this.onScroll());
     });
   }
