@@ -1,6 +1,12 @@
-<img src="./../../assets/10608019.jpg" />
 <div class="description-container">
-  <span class="title">Cerveja Brahma</span>
-  <span class="description">Garrafa 600 ml</span>
-  <span class="price">R$ 8,00</span>
+  <div class="description-header">
+    <span class="title">{{ item?.title }}</span>
+    <span class="price"
+      ><span class="price-sign">R$</span> {{ item?.price }}</span
+    >
+  </div>
+  <span class="description"
+    >{{ item?.type }} {{ item?.type && item?.description ? "•" : "" }}
+    {{ item?.description }}</span
+  >
 </div>
