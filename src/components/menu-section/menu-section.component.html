@@ -1,0 +1,9 @@
+<section>
+  <h1>{{ name }}</h1>
+  <div class="container">
+    <app-menu-item-card
+      *ngFor="let item of items"
+      [item]="item"
+    ></app-menu-item-card>
+  </div>
+</section>
