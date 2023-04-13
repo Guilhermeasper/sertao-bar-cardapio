@@ -4,47 +4,24 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  height: 16rem;
-  margin-bottom: 17rem;
   width: 100%;
   z-index: 10;
   position: relative;
+  position: fixed;
+  background-color: var(--sertao-light);
+
+  box-shadow: 0 4px 12px 0 #0000001a;
 }
 
 .name {
-  background-image: url("../../assets/header.png");
-  background-size: cover;
-
-  position: absolute;
-  height: 12rem;
+  height: 4rem;
   width: 100%;
-  top: 0;
-  left: 0;
-  font-family: "Titan One", cursive;
-  font-size: var(--display-large-size);
   display: flex;
   justify-content: center;
   align-items: center;
-  text-shadow: 1px 1px 1px var(--palette-primary-20);
 
-  .start {
-    color: var(--color-primary);
-  }
-
-  .end {
-    color: var(--color-secondary-dark);
-  }
-
-  .bar {
-    color: var(--color-tertiary);
-    font-family: Roboto Slab;
-    font-weight: 600;
-  }
-
-  &.sticky {
-    position: fixed;
-    z-index: 20;
-    top: 0 !important;
+  img {
+    height: 2rem;
   }
 }
 
@@ -52,26 +29,16 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: white;
   gap: 0.5rem;
-  height: 3rem;
+  height: 3.5rem;
   width: 100%;
   overflow-y: hidden;
   overflow-x: scroll;
-  padding: 2.5rem 0;
+  padding-bottom: 1rem;
   z-index: 20;
-  position: fixed;
-  top: 192px;
 
   :first-child {
-    margin-left: 0.5rem;
-  }
-
-  &.sticky {
-    background: #fff;
-    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.08);
-    position: fixed;
-    top: 60px;
+    margin-left: 2rem;
   }
 
   &::-webkit-scrollbar,
