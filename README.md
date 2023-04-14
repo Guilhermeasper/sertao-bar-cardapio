@@ -1,27 +1,55 @@
-# SertaoBarCardapio
+# Sertão Bar - Cardápio Digital
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
+![Sertão Bar Logo](/src/assets/vertical-light.svg)
 
-## Development server
+## Visão geral
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Este projeto é um cardápio digital desenvolvido para o Sertão Bar. Ele permite aos clientes visualizar e escolher itens do menu de forma mais rápida e conveniente, além de reduzir o contato físico com cardápios físicos.
 
-## Code scaffolding
+## Como usar
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para utilizar o cardápio digital, basta acessar o seguinte endereço: [sertao-bar.web.app](https://sertao-bar.web.app). Os usuários podem navegar pelo cardápio digital, visualizar descrições e preços dos pratos e bebidas. Abaixo, segue uma captura da tela inicial do aplicativo:
 
-## Build
+![Tela inicial](/src/assets/home.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Tecnologias utilizadas
 
-## Running unit tests
+Este projeto foi construído utilizando o seguinte conjunto de tecnologias e ferramentas:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Angular 13
+- Typescript
+- RXJS
+- Firebase
 
-## Running end-to-end tests
+## Funcionalidades principais
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Navegar pelo cardápio digital
+- Visualizar descrições e preços de pratos e bebidas
+- Pular para uma seção específica
 
-## Further help
+## Instalação e execução do projeto
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para instalar e executar este projeto em sua própria máquina, siga as seguintes etapas:
+
+1. Clone este repositório: `git clone https://github.com/seu-usuario/sertao-bar.git`
+2. Instale as dependências do projeto: `npm install`
+3. Inicie o servidor de desenvolvimento: `ng serve`
+
+Agora você pode acessar o cardápio digital em `http://localhost:4200`.
+
+## Como contribuir
+
+Se você quiser contribuir para este projeto, siga as seguintes etapas:
+
+1. Faça um fork deste repositório
+2. Crie uma branch com suas alterações: `git checkout -b feat/new-feature`
+3. Faça suas alterações e teste o projeto
+4. Commit suas alterações: `git commit -m "feat: add something"` _Favor seguir o [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) e escrever as mensagens em inglês_
+5. Faça um push para sua branch: `git push origin feat/new-feature`
+6. Abra um pull request com suas alterações
+
+_Obs: É recomendado abrir uma Issue antes de iniciar alguma mudança muito relevante para evitar que o seu Pull Request seja negado e você perca seu tempo._
+
+## Licença
+
+Este projeto é licenciado sob a licença [GPL](/LICENSE). Consulte o arquivo LICENSE para obter mais informações.
