@@ -2,10 +2,26 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding: 1rem;
   background-color: var(--sertao-primary-shade);
   border-top-right-radius: 2.5rem;
   height: 6rem;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--sertao-primary);
+  width: 5rem;
+  height: 6rem;
+  margin-left: 1rem;
+
+  img {
+    width: 5rem;
+    height: 6rem;
+    object-fit: cover;
+  }
 }
 
 .description-container {
@@ -14,7 +30,9 @@
   flex-direction: column;
   justify-content: space-around;
   gap: 0.5rem;
-  padding: 0.5rem 0.5rem;
+  padding: 1rem;
+  padding-left: 0.5rem;
+
   color: var(--sertao-light);
 
   .description-header {
@@ -24,7 +42,7 @@
 
     .title {
       font-family: var(--display-large-family);
-      font-size: var(--title-large-size);
+      font-size: var(--title-medium-size);
       font-weight: 400;
       max-width: 70%;
     }

@@ -2,8 +2,6 @@ import {
   Component,
   OnInit,
   ChangeDetectionStrategy,
-  HostListener,
-  ChangeDetectorRef,
   Input,
   Output,
   EventEmitter,
@@ -21,6 +19,7 @@ import {
 export class HeaderComponent implements OnInit {
   @Output() sectionChanged: EventEmitter<string> = new EventEmitter();
 
+  @Input() menuLoaded = false;
   @Input() selectedSection = '';
   @Input() sections: string[] = [];
 
