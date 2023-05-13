@@ -6,8 +6,9 @@ import {
   Output,
   EventEmitter,
   Input,
-  HostBinding,
+  ElementRef,
 } from '@angular/core';
+import { debounce, fromEvent, interval } from 'rxjs';
 
 @Component({
   selector: 'app-chip',
@@ -23,14 +24,36 @@ export class ChipComponent implements OnInit {
 
   @Input() name: string = '';
 
-  @Input() active: boolean = false;
-  constructor() {}
+  @Input() active = false;
 
-  ngOnInit(): void {}
+  constructor(
+    public elementRef: ElementRef<HTMLElement>,
+    private window: Window
+  ) {}
+
+  ngOnInit(): void {
+    fromEvent(this.window, 'scroll')
+      .pipe(debounce(() => interval(150)))
+      .subscribe(() => this._onScroll());
+  }
+
+  private _onScroll(): void {
+    if (this.active) {
+      this._scrollIntoView();
+    }
+  }
+
+  private _scrollIntoView(): void {
+    this.elementRef.nativeElement.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+    });
+  }
 
   @HostListener('click')
   onClick(): void {
     this.active = true;
+    this._scrollIntoView();
     this.stateChange.emit(this.name);
   }
 }
