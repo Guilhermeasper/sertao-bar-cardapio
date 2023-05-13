@@ -8,9 +8,10 @@ import { HeaderModule } from '../components/header/header.module';
 import { ChipModule } from 'src/components/chip/chip.module';
 import { MenuSectionModule } from '../components/menu-section/menu-section.module';
 import { HttpClientModule } from '@angular/common/http';
+import { SectionItemsPipe } from '../pipes/section-items.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SectionItemsPipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     MenuSectionModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [{ provide: Window, useValue: window }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
