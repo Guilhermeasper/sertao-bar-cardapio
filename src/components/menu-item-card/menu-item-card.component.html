@@ -1,3 +1,6 @@
+<div class="image-container" *ngIf="item.image">
+  <img [attr.src]="item.image" />
+</div>
 <div class="description-container">
   <div class="description-header">
     <span class="title">{{ item?.title }}</span>
