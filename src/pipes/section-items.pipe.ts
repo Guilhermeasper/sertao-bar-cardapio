@@ -5,7 +5,10 @@ import { MenuItem } from 'src/models/menu-item';
   name: 'sectionItems',
 })
 export class SectionItemsPipe implements PipeTransform {
-  transform(section: string, sections: Map<string, MenuItem[]>): MenuItem[] {
+  transform(
+    section: string,
+    sections: Map<string, MenuItem[]>
+  ): MenuItem[] | undefined {
     return sections.get(section);
   }
 }

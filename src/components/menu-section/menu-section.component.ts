@@ -15,7 +15,7 @@ import { MenuItem } from 'src/models/menu-item';
 })
 export class MenuSectionComponent implements OnInit {
   @Input() name: string = '';
-  @Input() items: MenuItem[] = [];
+  @Input() items?: MenuItem[] = [];
   @Input() isCurrent = false;
 
   constructor(public elementRef: ElementRef) {}
