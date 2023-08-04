@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { Subject, debounce, fromEvent, interval, takeUntil } from 'rxjs';
 import { SBHeaderComponent } from 'src/components/header/header.component';
-import { MenuSectionComponent } from 'src/components/menu-section/menu-section.component';
+import { SBMenuSectionComponent } from 'src/components/menu-section/menu-section.component';
 import { MenuItem } from 'src/models/menu-item';
 import { SpreadsheetService } from 'src/services/spreadsheet/spreadsheet.service';
 
@@ -24,8 +24,8 @@ export class AppComponent implements OnInit {
   items: Map<string, MenuItem[]> = new Map<string, MenuItem[]>();
   itemsSubject = new Subject<Map<string, MenuItem[]>>();
 
-  @ViewChildren('section') sectionsRef: QueryList<MenuSectionComponent> =
-    new QueryList<MenuSectionComponent>();
+  @ViewChildren('section') sectionsRef: QueryList<SBMenuSectionComponent> =
+    new QueryList<SBMenuSectionComponent>();
 
   @ViewChild(SBHeaderComponent) headerRef: SBHeaderComponent | undefined;
 

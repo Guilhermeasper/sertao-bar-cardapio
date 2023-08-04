@@ -4,7 +4,7 @@ import { MenuItem } from 'src/models/menu-item';
 @Pipe({
   name: 'sectionItems',
 })
-export class SectionItemsPipe implements PipeTransform {
+export class SBSectionItemsPipe implements PipeTransform {
   transform(
     section: string,
     sections: Map<string, MenuItem[]>
