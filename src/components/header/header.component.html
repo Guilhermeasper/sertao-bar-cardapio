@@ -2,11 +2,11 @@
   <img src="../../assets/horizontal-light.svg" />
 </div>
 <div *ngIf="menuLoaded" #menu class="menu-select">
-  <app-chip
+  <sb-chip
     *ngFor="let item of sections"
     [name]="item"
     [active]="item === selectedSection"
     (stateChange)="changeSection($event)"
-    >{{ item }}</app-chip
+    >{{ item }}</sb-chip
   >
 </div>
