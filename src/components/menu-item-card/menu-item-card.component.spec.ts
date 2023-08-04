@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenuItemCardComponent } from './menu-item-card.component';
+import { SBMenuItemCardComponent } from './menu-item-card.component';
 
 describe('MenuItemCardComponent', () => {
-  let component: MenuItemCardComponent;
-  let fixture: ComponentFixture<MenuItemCardComponent>;
+  let component: SBMenuItemCardComponent;
+  let fixture: ComponentFixture<SBMenuItemCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MenuItemCardComponent ]
-    })
-    .compileComponents();
+      declarations: [SBMenuItemCardComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MenuItemCardComponent);
+    fixture = TestBed.createComponent(SBMenuItemCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
