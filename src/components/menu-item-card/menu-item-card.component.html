@@ -1,12 +1,15 @@
+<div class="image-container" *ngIf="item.image">
+  <img [attr.src]="item.image" />
+</div>
 <div class="description-container">
   <div class="description-header">
-    <span class="title">{{ item?.title }}</span>
+    <span class="title">{{ item.title }}</span>
     <span class="price"
-      ><span class="price-sign">R$</span> {{ item?.price }}</span
+      ><span class="price-sign">R$</span> {{ item.price }}</span
     >
   </div>
   <span class="description"
-    >{{ item?.type }} {{ item?.type && item?.description ? "•" : "" }}
-    {{ item?.description }}</span
+    >{{ item.type }} {{ item.type && item.description ? "•" : "" }}
+    {{ item.description }}</span
   >
 </div>

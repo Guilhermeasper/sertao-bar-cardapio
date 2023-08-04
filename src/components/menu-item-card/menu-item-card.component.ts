@@ -13,7 +13,7 @@ import { MenuItem } from 'src/models/menu-item';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuItemCardComponent implements OnInit {
-  @Input() item: MenuItem | null = null;
+  @Input() item!: MenuItem;
 
   constructor() {}
 

@@ -1,14 +1,15 @@
 <app-header
+  [menuLoaded]="items.size > 0"
   [sections]="sections"
   [selectedSection]="selectedSection"
   (sectionChanged)="onSectionChange($event)"
 ></app-header>
 <router-outlet></router-outlet>
-<div class="container">
+<div class="container" *ngIf="items.size > 0">
   <app-menu-section
     #section
     *ngFor="let section of sections"
-    [items]="sectionItems(section)"
+    [items]="section | sectionItems : items"
     [name]="section"
   ></app-menu-section>
 </div>
