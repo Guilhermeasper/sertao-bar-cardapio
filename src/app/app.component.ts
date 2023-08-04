@@ -6,7 +6,7 @@ import {
   ViewChildren,
 } from '@angular/core';
 import { Subject, debounce, fromEvent, interval, takeUntil } from 'rxjs';
-import { HeaderComponent } from 'src/components/header/header.component';
+import { SBHeaderComponent } from 'src/components/header/header.component';
 import { MenuSectionComponent } from 'src/components/menu-section/menu-section.component';
 import { MenuItem } from 'src/models/menu-item';
 import { SpreadsheetService } from 'src/services/spreadsheet/spreadsheet.service';
@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
   @ViewChildren('section') sectionsRef: QueryList<MenuSectionComponent> =
     new QueryList<MenuSectionComponent>();
 
-  @ViewChild(HeaderComponent) headerRef: HeaderComponent | undefined;
+  @ViewChild(SBHeaderComponent) headerRef: SBHeaderComponent | undefined;
 
   constructor(private spreadSheetService: SpreadsheetService) {}
 

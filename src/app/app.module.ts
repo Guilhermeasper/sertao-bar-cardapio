@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { MenuItemCardModule } from '../components/menu-item-card/menu-item-card.module';
-import { HeaderModule } from '../components/header/header.module';
-import { MenuSectionModule } from '../components/menu-section/menu-section.module';
 import { HttpClientModule } from '@angular/common/http';
-import { SectionItemsPipe } from '../pipes/section-items.pipe';
+
+import { AppRoutingModule } from '@sertao-bar/app/app-routing.module';
+import { AppComponent } from '@sertao-bar/app/app.component';
+import { MenuItemCardModule } from '@sertao-bar/components/menu-item-card/menu-item-card.module';
+import { MenuSectionModule } from '@sertao-bar/components/menu-section/menu-section.module';
+import { SectionItemsPipe } from '@sertao-bar/pipes/section-items.pipe';
+import { SBHeaderComponent } from '@sertao-bar/components/header/header.component';
 
 @NgModule({
   declarations: [AppComponent, SectionItemsPipe],
@@ -15,7 +15,7 @@ import { SectionItemsPipe } from '../pipes/section-items.pipe';
     BrowserModule,
     AppRoutingModule,
     MenuItemCardModule,
-    HeaderModule,
+    SBHeaderComponent,
     MenuSectionModule,
     HttpClientModule,
   ],

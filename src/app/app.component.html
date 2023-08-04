@@ -1,9 +1,9 @@
-<app-header
+<sb-header
   [menuLoaded]="items.size > 0"
   [sections]="sections"
   [selectedSection]="selectedSection"
   (sectionChanged)="onSectionChange($event)"
-></app-header>
+></sb-header>
 <router-outlet></router-outlet>
 <div class="container" *ngIf="items.size > 0">
   <app-menu-section
