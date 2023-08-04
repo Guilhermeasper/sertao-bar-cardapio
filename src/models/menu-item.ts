@@ -1,4 +1,4 @@
-export type MenuItem = {
+export type SBMenuItem = {
   title: string;
   price: string;
   category: string;

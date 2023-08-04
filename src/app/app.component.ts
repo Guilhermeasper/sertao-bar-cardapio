@@ -5,14 +5,14 @@ import {
   ViewChild,
   ViewChildren,
 } from '@angular/core';
-import { Subject, debounce, fromEvent, interval, takeUntil } from 'rxjs';
-import { SBHeaderComponent } from 'src/components/header/header.component';
-import { SBMenuSectionComponent } from 'src/components/menu-section/menu-section.component';
-import { MenuItem } from 'src/models/menu-item';
-import { SpreadsheetService } from 'src/services/spreadsheet/spreadsheet.service';
+import { Subject, debounce, fromEvent, interval } from 'rxjs';
+import { SBHeaderComponent } from '@sertao-bar/components/header/header.component';
+import { SBMenuSectionComponent } from '@sertao-bar/components/menu-section/menu-section.component';
+import { SBMenuItem } from '@sertao-bar/models/menu-item';
+import { SpreadsheetService } from '@sertao-bar/services/spreadsheet/spreadsheet.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'sb-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
@@ -21,8 +21,8 @@ export class AppComponent implements OnInit {
   title = 'Cardápio Sertão Bar';
   sections: string[] = [];
   sectionsSubject = new Subject<string[]>();
-  items: Map<string, MenuItem[]> = new Map<string, MenuItem[]>();
-  itemsSubject = new Subject<Map<string, MenuItem[]>>();
+  items: Map<string, SBMenuItem[]> = new Map<string, SBMenuItem[]>();
+  itemsSubject = new Subject<Map<string, SBMenuItem[]>>();
 
   @ViewChildren('section') sectionsRef: QueryList<SBMenuSectionComponent> =
     new QueryList<SBMenuSectionComponent>();
@@ -79,7 +79,7 @@ export class AppComponent implements OnInit {
   private _loadItems(): void {
     this.spreadSheetService.getMenuItems().subscribe((items) => {
       const itemsArray = items.values;
-      const sectionItemsMap = new Map<string, MenuItem[]>();
+      const sectionItemsMap = new Map<string, SBMenuItem[]>();
       this.sections.forEach((section) => {
         sectionItemsMap.set(
           section,
@@ -90,8 +90,8 @@ export class AppComponent implements OnInit {
     });
   }
 
-  private _parseItems(itemArray: string[][]): MenuItem[] {
-    const items: MenuItem[] = [];
+  private _parseItems(itemArray: string[][]): SBMenuItem[] {
+    const items: SBMenuItem[] = [];
     itemArray.forEach((item) => {
       items.push({
         title: this._parseItem(item[0]),
@@ -100,7 +100,7 @@ export class AppComponent implements OnInit {
         type: this._parseItem(item[3]),
         description: this._parseItem(item[4]),
         image: this._parseItem(item[5]),
-      } as MenuItem);
+      } as SBMenuItem);
     });
     return items;
   }

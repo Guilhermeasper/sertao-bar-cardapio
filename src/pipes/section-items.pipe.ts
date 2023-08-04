@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { MenuItem } from 'src/models/menu-item';
+import { SBMenuItem } from '@sertao-bar/models/menu-item';
 
 @Pipe({
   name: 'sectionItems',
@@ -7,8 +7,8 @@ import { MenuItem } from 'src/models/menu-item';
 export class SBSectionItemsPipe implements PipeTransform {
   transform(
     section: string,
-    sections: Map<string, MenuItem[]>
-  ): MenuItem[] | undefined {
+    sections: Map<string, SBMenuItem[]>
+  ): SBMenuItem[] | undefined {
     return sections.get(section);
   }
 }

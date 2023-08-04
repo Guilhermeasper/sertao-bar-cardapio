@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { SpreadsheetResponse } from 'src/models/spreadsheet-response';
-import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+import { SBSpreadsheetResponse } from '@sertao-bar/models/spreadsheet-response';
+import { environment } from '@sertao-bar/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -13,13 +13,13 @@ export class SpreadsheetService {
 
   constructor(private http: HttpClient) {}
 
-  getSections(): Observable<SpreadsheetResponse> {
+  getSections(): Observable<SBSpreadsheetResponse> {
     const requestUrl = `${this.apiUrl}sections?alt=json&key=${this.apiKey}`;
-    return this.http.get<SpreadsheetResponse>(requestUrl);
+    return this.http.get<SBSpreadsheetResponse>(requestUrl);
   }
 
-  getMenuItems(): Observable<SpreadsheetResponse> {
+  getMenuItems(): Observable<SBSpreadsheetResponse> {
     const requestUrl = `${this.apiUrl}data?alt=json&key=${this.apiKey}`;
-    return this.http.get<SpreadsheetResponse>(requestUrl);
+    return this.http.get<SBSpreadsheetResponse>(requestUrl);
   }
 }

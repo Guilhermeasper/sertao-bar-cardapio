@@ -1,4 +1,4 @@
-export type SpreadsheetResponse = {
+export type SBSpreadsheetResponse = {
   range: string;
   majorDimension: string;
   values: Array<string[]>;

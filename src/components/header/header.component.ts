@@ -8,8 +8,8 @@ import {
   ViewChild,
   ElementRef,
 } from '@angular/core';
-import { SBChipComponent } from '@sertao-bar/components/chip/chip.component';
 import { CommonModule } from '@angular/common';
+import { SBChipComponent } from '@sertao-bar/components/chip/chip.component';
 
 @Component({
   selector: 'sb-header',

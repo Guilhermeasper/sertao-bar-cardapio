@@ -1,4 +1,3 @@
-import { SBMenuItemCardComponent } from '@sertao-bar/components/menu-item-card/menu-item-card.component';
 import { CommonModule } from '@angular/common';
 import {
   Component,
@@ -7,7 +6,8 @@ import {
   Input,
   ElementRef,
 } from '@angular/core';
-import { MenuItem } from '@sertao-bar/models/menu-item';
+import { SBMenuItemCardComponent } from '@sertao-bar/components/menu-item-card/menu-item-card.component';
+import { SBMenuItem } from '@sertao-bar/models/menu-item';
 
 @Component({
   selector: 'sb-menu-section',
@@ -50,7 +50,7 @@ import { MenuItem } from '@sertao-bar/models/menu-item';
 })
 export class SBMenuSectionComponent implements OnInit {
   @Input() name: string = '';
-  @Input() items?: MenuItem[] = [];
+  @Input() items?: SBMenuItem[] = [];
   @Input() isCurrent = false;
 
   constructor(public elementRef: ElementRef) {}

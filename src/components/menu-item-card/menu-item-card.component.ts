@@ -5,7 +5,7 @@ import {
   ChangeDetectionStrategy,
   Input,
 } from '@angular/core';
-import { MenuItem } from '@sertao-bar/models/menu-item';
+import { SBMenuItem } from '@sertao-bar/models/menu-item';
 
 @Component({
   selector: 'sb-menu-item-card',
@@ -101,7 +101,7 @@ import { MenuItem } from '@sertao-bar/models/menu-item';
   ],
 })
 export class SBMenuItemCardComponent implements OnInit {
-  @Input() item!: MenuItem;
+  @Input() item!: SBMenuItem;
 
   constructor() {}
 
