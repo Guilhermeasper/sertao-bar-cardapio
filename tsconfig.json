@@ -4,8 +4,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@src": ["src"],
-      "@src/*": ["src/*"]
+      "@sertao-bar": ["src"],
+      "@sertao-bar/*": ["src/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
