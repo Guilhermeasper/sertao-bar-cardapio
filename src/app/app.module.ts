@@ -6,6 +6,7 @@ import { AppComponent } from '@sertao-bar/app/app.component';
 import { SBSectionItemsPipe } from '@sertao-bar/pipes/section-items.pipe';
 import { SBHeaderComponent } from '@sertao-bar/components/header/header.component';
 import { SBMenuSectionComponent } from '@sertao-bar/components/menu-section/menu-section.component';
+import { SBCategoryListComponent } from '@sertao-bar/components/category-list/category-list.component';
 
 @NgModule({
   declarations: [AppComponent, SBSectionItemsPipe],
@@ -13,6 +14,7 @@ import { SBMenuSectionComponent } from '@sertao-bar/components/menu-section/menu
     BrowserModule,
     SBHeaderComponent,
     SBMenuSectionComponent,
+    SBCategoryListComponent,
     HttpClientModule,
   ],
   providers: [{ provide: Window, useValue: window }],

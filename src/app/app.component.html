@@ -1,9 +1,4 @@
-<sb-header
-  [menuLoaded]="items.size > 0"
-  [sections]="sections"
-  [selectedSection]="selectedSection"
-  (sectionChanged)="onSectionChange($event)"
-></sb-header>
+<sb-header [scrollShadow]="headerScrollShadow"></sb-header>
 <div class="container" *ngIf="items.size > 0">
   <sb-menu-section
     #section
@@ -12,3 +7,10 @@
     [name]="section"
   ></sb-menu-section>
 </div>
+<sb-category-list
+  [menuLoaded]="items.size > 0"
+  [sections]="sections"
+  [selectedSection]="selectedSection"
+  [scrollShadow]="categoryListScrollShadow"
+  (sectionChanged)="onSectionChange($event)"
+></sb-category-list>
