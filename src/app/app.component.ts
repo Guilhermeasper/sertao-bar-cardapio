@@ -23,6 +23,8 @@ export class AppComponent implements OnInit {
   sectionsSubject = new Subject<string[]>();
   items: Map<string, SBMenuItem[]> = new Map<string, SBMenuItem[]>();
   itemsSubject = new Subject<Map<string, SBMenuItem[]>>();
+  headerScrollShadow = false;
+  categoryListScrollShadow = true;
 
   @ViewChildren('section') sectionsRef: QueryList<SBMenuSectionComponent> =
     new QueryList<SBMenuSectionComponent>();
@@ -111,6 +113,24 @@ export class AppComponent implements OnInit {
   */
   private _onScroll(): void {
     let offsetSum = 0;
+    const scrollableHeight =
+      window.document.body.scrollHeight - window.innerHeight;
+    const tolerance = 10;
+
+    if (
+      window.scrollY > tolerance &&
+      window.scrollY < scrollableHeight - tolerance
+    ) {
+      this.headerScrollShadow = true;
+      this.categoryListScrollShadow = true;
+    } else if (window.scrollY <= tolerance) {
+      this.headerScrollShadow = false;
+      this.categoryListScrollShadow = true;
+    } else if (window.scrollY >= scrollableHeight - tolerance) {
+      this.headerScrollShadow = true;
+      this.categoryListScrollShadow = false;
+    }
+
     for (let index = 0; index < this.sectionsRef.length; index++) {
       const element = this.sectionsRef.get(index);
       const elementSize = 48 + (element?.items?.length ?? 0) * 112;
