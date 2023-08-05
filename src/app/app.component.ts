@@ -1,5 +1,6 @@
 import {
   Component,
+  HostBinding,
   OnInit,
   QueryList,
   ViewChild,
@@ -31,6 +32,8 @@ export class AppComponent implements OnInit {
 
   @ViewChild(SBHeaderComponent) headerRef: SBHeaderComponent | undefined;
 
+  @HostBinding('class.loading') loading = true;
+
   constructor(private spreadSheetService: SpreadsheetService) {}
 
   ngOnInit(): void {
@@ -42,6 +45,7 @@ export class AppComponent implements OnInit {
 
     this.itemsSubject.subscribe((items) => {
       this.items = items;
+      this.loading = false;
     });
 
     this._loadSections();
