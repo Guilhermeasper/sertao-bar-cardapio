@@ -22,7 +22,7 @@ import { debounce, fromEvent, interval } from 'rxjs';
     `
       :host {
         display: flex;
-        padding: 0 1rem;
+        padding: 1.5rem;
         background-color: var(--sertao-secondary);
         color: var(--sertao-primary-shade);
         border-radius: 4rem;
@@ -32,7 +32,7 @@ import { debounce, fromEvent, interval } from 'rxjs';
         border: none;
         white-space: pre;
         font-family: var(--title-large-family);
-        font-size: var(--title-medium-size);
+        font-size: var(--headline-small-size);
         text-transform: uppercase;
         letter-spacing: 0.05rem;
         -webkit-tap-highlight-color: transparent;
