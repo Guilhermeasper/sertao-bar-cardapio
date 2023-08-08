@@ -1,14 +1,16 @@
-<app-header
-  [sections]="sections"
-  [selectedSection]="selectedSection"
-  (sectionChanged)="onSectionChange($event)"
-></app-header>
-<router-outlet></router-outlet>
+<sb-header [loading]="loading" [scrollShadow]="headerScrollShadow"></sb-header>
 <div class="container">
-  <app-menu-section
+  <sb-menu-section
     #section
     *ngFor="let section of sections"
-    [items]="sectionItems(section)"
+    [items]="section | sectionItems : items"
     [name]="section"
-  ></app-menu-section>
+  ></sb-menu-section>
 </div>
+<sb-category-list
+  [menuLoaded]="items.size > 0"
+  [sections]="sections"
+  [selectedSection]="selectedSection"
+  [scrollShadow]="categoryListScrollShadow"
+  (sectionChanged)="onSectionChange($event)"
+></sb-category-list>
