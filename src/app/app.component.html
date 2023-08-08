@@ -1,5 +1,5 @@
 <sb-header [loading]="loading" [scrollShadow]="headerScrollShadow"></sb-header>
-<div class="container" *ngIf="!loading">
+<div class="container">
   <sb-menu-section
     #section
     *ngFor="let section of sections"
@@ -8,7 +8,6 @@
   ></sb-menu-section>
 </div>
 <sb-category-list
-  *ngIf="!loading"
   [menuLoaded]="items.size > 0"
   [sections]="sections"
   [selectedSection]="selectedSection"

@@ -36,7 +36,6 @@ import { CommonModule } from '@angular/common';
         }
 
         &.loading {
-          background-color: transparent;
           -webkit-animation: breathing 3s ease infinite;
           animation: breathing 3s ease infinite;
           height: 100%;
