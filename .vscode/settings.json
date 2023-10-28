@@ -1,4 +1,24 @@
 {
   "xd.globalEditor": true,
-  "xd.lastPackage": "/C:/Users/guilh/Downloads/material-theme"
+  "xd.lastPackage": "/C:/Users/guilh/Downloads/material-theme",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#da5c27",
+    "activityBar.background": "#da5c27",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#25da5b",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#da5c27",
+    "statusBar.background": "#b1491e",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#da5c27",
+    "statusBarItem.remoteBackground": "#b1491e",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#b1491e",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#b1491e99",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#b1491e"
 }
