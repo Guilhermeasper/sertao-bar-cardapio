@@ -4,6 +4,10 @@ import {
   OnInit,
   ChangeDetectionStrategy,
   Input,
+  HostBinding,
+  HostListener,
+  inject,
+  ElementRef,
 } from '@angular/core';
 import { SBMenuItem } from '@sertao-bar/models/menu-item';
 
@@ -38,6 +42,12 @@ import { SBMenuItem } from '@sertao-bar/models/menu-item';
         background-color: var(--sertao-primary-shade);
         border-top-right-radius: 2.5rem;
         height: 6rem;
+
+        &:focus-visible {
+          outline: none;
+          -webkit-box-shadow: 0px 0px 0px 2px var(--sertao-light), 0px 0px 0px 4px var(--sertao-primary-shade);
+          box-shadow: 0px 0px 0px 2px var(--sertao-light), 0px 0px 0px 4px var(--sertao-primary-shade);
+        }
       }
 
       .image-container {
@@ -102,6 +112,18 @@ import { SBMenuItem } from '@sertao-bar/models/menu-item';
 })
 export class SBMenuItemCardComponent implements OnInit {
   @Input() item!: SBMenuItem;
+
+  @HostBinding('tabindex') tabindex = 0;
+
+  @HostListener('focus') onFocus() {
+    this._elementRef.nativeElement.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      inline: 'center',
+    });
+  }
+
+  private _elementRef = inject(ElementRef);
 
   constructor() {}
 
