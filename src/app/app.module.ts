@@ -7,6 +7,7 @@ import { SBSectionItemsPipe } from '@sertao-bar/pipes/section-items.pipe';
 import { SBHeaderComponent } from '@sertao-bar/components/header/header.component';
 import { SBMenuSectionComponent } from '@sertao-bar/components/menu-section/menu-section.component';
 import { SBCategoryListComponent } from '@sertao-bar/components/category-list/category-list.component';
+import { DropdownComponent } from '@sertao-bar/components/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [AppComponent, SBSectionItemsPipe],
@@ -15,6 +16,7 @@ import { SBCategoryListComponent } from '@sertao-bar/components/category-list/ca
     SBHeaderComponent,
     SBMenuSectionComponent,
     SBCategoryListComponent,
+    DropdownComponent,
     HttpClientModule,
   ],
   providers: [{ provide: Window, useValue: window }],

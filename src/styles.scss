@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Karantina:wght@400;700&family=Ultra&display=swap");
 @import "./styles/reset.scss";
 @import "./styles/_variables.scss";
+@import "~@angular/cdk/overlay-prebuilt.css";
 
 * {
   box-sizing: border-box;

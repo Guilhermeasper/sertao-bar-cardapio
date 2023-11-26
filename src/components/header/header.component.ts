@@ -5,11 +5,12 @@ import {
   HostBinding,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DropdownComponent } from '../dropdown/dropdown.component';
 
 @Component({
   selector: 'sb-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule],
+  imports: [CommonModule, DropdownComponent],
   standalone: true,
   template: ` <img src="../../assets/horizontal-light.svg" /> `,
   styles: [

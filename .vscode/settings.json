@@ -1,4 +1,18 @@
 {
   "xd.globalEditor": true,
-  "xd.lastPackage": "/C:/Users/guilh/Downloads/material-theme"
+  "xd.lastPackage": "/C:/Users/guilh/Downloads/material-theme",
+  "angular-schematics.schematicsDefaultOptions": {
+    "angular-*": {
+      "style": "scss",
+      "inlineStyle": true
+    },
+    "angular-component": {
+      "skipPathSubfolder": true,
+      "skipChangeDetectionOnPush": true
+    },
+    "angular-page": {
+      "skipPathSubfolder": true,
+      "skipChangeDetectionOnPush": true
+    }
+  }
 }

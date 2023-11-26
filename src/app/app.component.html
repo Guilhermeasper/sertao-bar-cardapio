@@ -1,5 +1,10 @@
 <sb-header [loading]="loading" [scrollShadow]="headerScrollShadow"></sb-header>
 <div class="container">
+  <sb-dropdown>
+    <li sb-dropdown-item>Item 1</li>
+    <li sb-dropdown-item>Item 2</li>
+    <li sb-dropdown-item>Item 3</li>
+  </sb-dropdown>
   <sb-menu-section
     #section
     *ngFor="let section of sections"
