@@ -36,4 +36,19 @@
     "titleBar.inactiveForeground": "#e7e7e799"
   },
   "peacock.color": "#b1491e"
+  "xd.lastPackage": "/C:/Users/guilh/Downloads/material-theme",
+  "angular-schematics.schematicsDefaultOptions": {
+    "angular-*": {
+      "style": "scss",
+      "inlineStyle": true
+    },
+    "angular-component": {
+      "skipPathSubfolder": true,
+      "skipChangeDetectionOnPush": true
+    },
+    "angular-page": {
+      "skipPathSubfolder": true,
+      "skipChangeDetectionOnPush": true
+    }
+  }
 }
