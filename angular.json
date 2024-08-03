@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "sertao-bar-cardapio:build:production"
+              "buildTarget": "sertao-bar-cardapio:build:production"
             },
             "development": {
-              "browserTarget": "sertao-bar-cardapio:build:development"
+              "buildTarget": "sertao-bar-cardapio:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sertao-bar-cardapio:build"
+            "buildTarget": "sertao-bar-cardapio:build"
           }
         }
       }
