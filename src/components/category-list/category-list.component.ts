@@ -46,9 +46,7 @@ import { CommonModule } from '@angular/common';
         flex-direction: row;
         align-items: center;
         gap: 0.5rem;
-        height: 4rem;
-        padding: 0 0.5rem;
-
+        padding: 12px 4px;
         width: 100%;
         overflow-y: hidden;
         overflow-x: scroll;

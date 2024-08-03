@@ -20,7 +20,7 @@ import { CommonModule } from '@angular/common';
         z-index: 10;
         position: relative;
         position: fixed;
-        height: 8vh;
+        padding: 20px 0;
         background-color: var(--sertao-light);
         transition-property: height, background-color;
         transition-duration: 0.75s;
