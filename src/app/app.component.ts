@@ -9,7 +9,7 @@ import {
 import { Subject, debounce, fromEvent, interval } from 'rxjs';
 import { SBMenuSectionComponent } from '@sertao-bar/components/menu-section/menu-section.component';
 import { SBMenuItem } from '@sertao-bar/models/menu-item';
-import { SpreadsheetService } from '@sertao-bar/services/spreadsheet/spreadsheet.service';
+import { MenuService } from '@sertao-bar/services/menu/menu.service';
 
 @Component({
   selector: 'sb-root',
@@ -20,9 +20,7 @@ export class AppComponent implements OnInit {
   selectedSection = '';
   title = 'Cardápio Sertão Bar';
   sections: string[] = [];
-  sectionsSubject = new Subject<string[]>();
   items: Map<string, SBMenuItem[]> = new Map<string, SBMenuItem[]>();
-  itemsSubject = new Subject<Map<string, SBMenuItem[]>>();
   headerScrollShadow = false;
   categoryListScrollShadow = true;
 
@@ -31,21 +29,16 @@ export class AppComponent implements OnInit {
 
   @HostBinding('class.loading') loading = true;
 
-  constructor(private spreadSheetService: SpreadsheetService) {}
+  constructor(private menuService: MenuService) {}
 
   ngOnInit(): void {
-    this.sectionsSubject.subscribe((sections) => {
-      this.sections = sections;
-      this.selectedSection = this.sections[0];
-      this._loadItems();
+    this.menuService.menuObservable.subscribe((menu) => {
+      if (menu) {
+        this.sections = Array.from(menu.keys());
+        this.items = menu;
+        this.loading = false;
+      }
     });
-
-    this.itemsSubject.subscribe((items) => {
-      this.items = items;
-      this.loading = false;
-    });
-
-    this._loadSections();
     fromEvent(window, 'scroll')
       .pipe(debounce(() => interval(100)))
       .subscribe(() => this._onScroll());
@@ -71,41 +64,6 @@ export class AppComponent implements OnInit {
         });
       }
     });
-  }
-
-  private _loadSections(): void {
-    this.spreadSheetService.getSections().subscribe((sections) => {
-      this.sectionsSubject.next(sections.values[0]);
-    });
-  }
-
-  private _loadItems(): void {
-    this.spreadSheetService.getMenuItems().subscribe((items) => {
-      const itemsArray = items.values;
-      const sectionItemsMap = new Map<string, SBMenuItem[]>();
-      this.sections.forEach((section) => {
-        sectionItemsMap.set(
-          section,
-          this._parseItems(itemsArray.filter((item) => item[2] === section))
-        );
-      });
-      this.itemsSubject.next(sectionItemsMap);
-    });
-  }
-
-  private _parseItems(itemArray: string[][]): SBMenuItem[] {
-    const items: SBMenuItem[] = [];
-    itemArray.forEach((item) => {
-      items.push({
-        title: this._parseItem(item[0]),
-        price: this._parseItem(item[1]),
-        category: this._parseItem(item[2]),
-        type: this._parseItem(item[3]),
-        description: this._parseItem(item[4]),
-        image: this._parseItem(item[5]),
-      } as SBMenuItem);
-    });
-    return items;
   }
 
   /**
@@ -144,9 +102,5 @@ export class AppComponent implements OnInit {
         this.selectedSection = element?.name ?? this.sections[0];
       }
     }
-  }
-
-  private _parseItem(item: string): string | null {
-    return item != '-' ? item : null;
   }
 }

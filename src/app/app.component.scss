@@ -13,4 +13,10 @@
     align-items: center;
     background-color: var(--sertao-light);
   }
+
+  .loading-message {
+    font-size: 1.5rem;
+    color: var(--sertao-dark);
+    font-family: "Ultra", sans-serif;
+  }
 }
