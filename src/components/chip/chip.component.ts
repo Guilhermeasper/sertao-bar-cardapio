@@ -39,7 +39,6 @@ import { debounce, fromEvent, interval } from 'rxjs';
 
         &.active {
           background-color: var(--sertao-secondary-shade);
-          color: var(--sertao-light);
         }
       }
     `,
