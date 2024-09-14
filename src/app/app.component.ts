@@ -7,7 +7,6 @@ import {
   ViewChildren,
 } from '@angular/core';
 import { Subject, debounce, fromEvent, interval } from 'rxjs';
-import { SBHeaderComponent } from '@sertao-bar/components/header/header.component';
 import { SBMenuSectionComponent } from '@sertao-bar/components/menu-section/menu-section.component';
 import { SBMenuItem } from '@sertao-bar/models/menu-item';
 import { SpreadsheetService } from '@sertao-bar/services/spreadsheet/spreadsheet.service';
@@ -29,8 +28,6 @@ export class AppComponent implements OnInit {
 
   @ViewChildren('section') sectionsRef: QueryList<SBMenuSectionComponent> =
     new QueryList<SBMenuSectionComponent>();
-
-  @ViewChild(SBHeaderComponent) headerRef: SBHeaderComponent | undefined;
 
   @HostBinding('class.loading') loading = true;
 

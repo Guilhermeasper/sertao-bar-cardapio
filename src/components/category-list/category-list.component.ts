@@ -26,8 +26,6 @@ import { CommonModule } from '@angular/common';
   `,
   styles: [
     `
-      @import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
-
       :host {
         &.scroll-shadow .menu-select {
           --shadow-color: #65250b0b;

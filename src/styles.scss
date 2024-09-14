@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Karantina:wght@400;700&family=Ultra&display=swap");
 @import "./styles/reset.scss";
 @import "./styles/_variables.scss";
 
@@ -17,4 +16,23 @@ body {
   height: 100%;
 
   overflow: overlay;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+  position: fixed;
+  padding: 20px 0;
+  background-color: var(--sertao-light);
+  transition-property: height, background-color;
+  transition-duration: 0.75s;
+  transition-timing-function: ease-out;
+  justify-content: center;
+  align-items: center;
+
+  .logo {
+    height: 2rem;
+  }
 }
